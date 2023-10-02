@@ -14,7 +14,7 @@ app.post('/register', (req, res) => {
 
   const user = { id: Date.now().toString(), username, password };
   users.push(user);
-  req.session.userId = user.id; // Set the session ID for the user
+  req.session.userId = user.id;
 
   res.status(201).send('Registration successful.');
 });
@@ -33,7 +33,7 @@ app.post('/login', (req, res) => {
     return res.status(401).send('Invalid credentials.');
   }
 
-  req.session.userId = user.id; // Set the session ID for the user
+  req.session.userId = user.id;
   res.send('Login successful.');
 });
 
@@ -61,7 +61,7 @@ function isAuthenticated(req, res, next) {
   }
   
   app.get('/dashboard', isAuthenticated, (req, res) => {
-    // Implement logic to retrieve and display user's uploaded videos
+    //TO-DO
     res.send('Dashboard - List of Uploaded Videos');
   });
   
