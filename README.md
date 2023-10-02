@@ -2,19 +2,6 @@
 
 This is the backend server for a video sharing and transcription application. It allows users to register, log in, upload videos, start and stop video recordings, and initiate video transcription.
 
-## Table of Contents
-
-- [Getting Started](#getting-started)
-- [Authentication](#authentication)
-- [User Registration](#user-registration)
-- [User Login](#user-login)
-- [User Logout](#user-logout)
-- [User Dashboard](#user-dashboard)
-- [Video Upload](#video-upload)
-- [Start Recording](#start-recording)
-- [Stop Recording](#stop-recording)
-- [Transcribe Video](#transcribe-video)
-
 ## Getting Started
 
 1. Clone this repository.
@@ -118,4 +105,17 @@ Authentication is required for most of the endpoints. Use the following API endp
 - **Response**: 
   - `200 OK`: Transcription started.
   - `401 Unauthorized`: User not logged in.
+  
+## User Schema
 
+The user schema includes the following fields:
+
+- `name` (String, required): The name of the user.
+- `email` (String, required, unique): The email address of the user.
+- `password` (String, required): The password of the user.
+
+## Additional Notes
+
+- Authentication is required for endpoints marked as "requires authentication."
+- User data should be securely stored, and hashed passwords should be used for security.
+- Ensure that the application is properly configured to use a secure session management mechanism.
